@@ -6,9 +6,13 @@
 // 782 –> 8
 // 918 –> 1
 
+void OutputSecondDigit(int num)
+{
+    int module = num < 0 ? num * -1 : num;
+    Console.WriteLine(module >= 100 && module <= 999 ? $"Вторая цифра числа {num}: {module / 10 % 10}" : "Число не трёхзначное.");
+}
+
 Console.WriteLine("Введите целое трёхзначное число:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 0) number *= -1;
-
-Console.WriteLine(number >= 100 && number <= 999 ? $"Вторая цифра числа: {number / 10 % 10}" : "Число не трёхзначное.");
+OutputSecondDigit(number);
